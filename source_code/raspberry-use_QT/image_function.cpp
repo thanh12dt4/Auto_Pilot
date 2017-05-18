@@ -74,7 +74,7 @@ list<float> selectRadians(vector<Vec2f> lines)
         if(theta > 20 and theta < 80){
             rads.push_back(radian);
         }
-        if(theta > 100 and theta < 180){
+        if(theta > 110 and theta < 170){
             rads.push_back(radian);
         }
     }
@@ -184,7 +184,7 @@ int findAngleDrive(Mat img)
             //for RIGHT LANE
             if(maxr == theta and flag1 == true){
                 l = calcX1Y1X2Y2(maxr, rho);
-                if((flag2 == false && maxr-minr > 0.3) || flag2 == true){
+                if((flag2 == false && maxr-minr > 0.5) || flag2 == true){
                     //line(img, l.A, l.B,CV_RGB(0,255,0),5);
                     rightlane.A.x = l.A.x;
                     rightlane.A.y = l.A.y;
@@ -197,7 +197,7 @@ int findAngleDrive(Mat img)
             //for LEFT LANE
             if(minr == theta and flag2 == true){
                 l = calcX1Y1X2Y2(minr, rho);
-                if((flag1 == false && maxr-minr > 0.3) || flag1 == true){
+                if((flag1 == false && maxr-minr > 0.5) || flag1 == true){
                     leftlane.A.x = l.A.x;
                     leftlane.A.y = l.A.y;
                     leftlane.B.x = l.B.x;
